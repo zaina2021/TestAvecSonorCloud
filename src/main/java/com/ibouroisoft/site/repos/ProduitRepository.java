@@ -7,7 +7,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import com.ibouroisoft.site.entities.Categorie;
 import com.ibouroisoft.site.entities.Produit;
+
 
 @Repository
 public interface ProduitRepository extends JpaRepository<Produit, Long> {
@@ -16,6 +18,9 @@ public interface ProduitRepository extends JpaRepository<Produit, Long> {
 	
 	@Query("select p from Produit p where p.nomProduit like %:nom and p.prixProduit > :prix" )
 	List<Produit> findByNomPrix(@Param("nom") String nom,@Param("prix")  Double prix);
+	
+	@Query("select p from Produit p where p.categorie = ?1")
+	List<Produit> findByCategorie(Categorie categorie);
 	
 
 }
