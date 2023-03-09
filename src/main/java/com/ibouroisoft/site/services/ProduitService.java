@@ -2,7 +2,9 @@ package com.ibouroisoft.site.services;
 
 import java.util.List;
 
+import com.ibouroisoft.site.entities.Categorie;
 import com.ibouroisoft.site.entities.Produit;
+
 
 
 
@@ -31,6 +33,16 @@ public interface ProduitService {
 
 	//Retourner tous les produits 
 	List<Produit> getAllProduits();
-	
+
+	//Ajout des méthodes du Repository
+
+	List<Produit> findByNomProduit(String nom);
+	List<Produit> findByNomProduitContains(String nom); 
+	List<Produit> findByNomPrix(String nom, Double prix);
+	List<Produit> findByCategorie(Categorie categorie);
+	List<Produit> findByCategorieIdCat(Long id);
+	List<Produit> findByOrderByNomProduitAsc();
+	List<Produit> trierProduitsNomsPrix ();
+
 
 }
