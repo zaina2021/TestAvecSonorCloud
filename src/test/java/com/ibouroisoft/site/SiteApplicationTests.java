@@ -76,6 +76,17 @@ class SiteApplicationTests {
 
 	}
 
+	@Test
+	public void testFindByNomPrix() {
+		List<Produit> prods = produitRepository.findByNomPrix("PC HP", 3000.1);
+		for(Produit p : prods ) {
+			System.out.println(p);
+			System.out.println("************************************************");
+
+
+		}
+	}
+
 	/*
 	//Test de la suppression de produit 
 	@Test
