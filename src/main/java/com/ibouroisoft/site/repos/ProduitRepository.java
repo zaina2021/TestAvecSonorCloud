@@ -10,6 +10,7 @@ import com.ibouroisoft.site.entities.Produit;
 @Repository
 public interface ProduitRepository extends JpaRepository<Produit, Long> {
 	List<Produit> findByNomProduit(String nom);
+	List<Produit> findByNomProduitContains(String nom); 
 	
 
 }
