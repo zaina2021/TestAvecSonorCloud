@@ -114,6 +114,19 @@ class SiteApplicationTests {
 		}
 
 	}
+	
+	@Test
+	public void testFindByOrderByNomProduitAsc() {
+		List<Produit> prods = produitRepository.findByOrderByNomProduitAsc();
+		for(Produit p : prods) {
+			System.out.println(p);
+			System.out.println("----------------------------------------------------");
+
+		}
+
+
+	}
+
 
 
 	/*
