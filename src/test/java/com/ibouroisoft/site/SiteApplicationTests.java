@@ -126,6 +126,19 @@ class SiteApplicationTests {
 
 
 	}
+	
+	@Test
+	public void testTrierProduitsNomsPrix()
+	{
+		List<Produit> prods = produitRepository.trierProduitsNomsPrix();
+		for (Produit p : prods) {
+			System.out.println(p);
+			System.out.println("++++++++++++++++++++++++++++++++++++++++");
+			
+		}
+		
+			
+	}
 
 
 
