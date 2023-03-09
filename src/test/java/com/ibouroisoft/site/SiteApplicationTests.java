@@ -54,6 +54,16 @@ class SiteApplicationTests {
 
 		}
 	}
+	
+	@Test
+	public void testFindByNomProduit()
+	{
+		List<Produit> prods = produitRepository.findByNomProduit("PC HP");
+		for (Produit p : prods)
+		{
+			System.out.println(p);
+		}
+	}
 
 /*
 	//Test de la suppression de produit 
