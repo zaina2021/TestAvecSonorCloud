@@ -7,8 +7,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.ibouroisoft.site.entities.Categorie;
 import com.ibouroisoft.site.entities.Produit;
 import com.ibouroisoft.site.repos.ProduitRepository;
+
 
 
 
@@ -85,6 +87,20 @@ class SiteApplicationTests {
 
 
 		}
+	}
+
+	@Test
+	public void testFindByCategorie() {
+
+		Categorie cat = new Categorie();
+		cat.setIdCat(4L);
+		List<Produit> prods = produitRepository.findByCategorie(cat);
+		for(Produit p : prods) {
+			System.out.println(p);
+			System.out.println("##############################################################");
+
+		}
+
 	}
 
 	/*
