@@ -54,7 +54,7 @@ class SiteApplicationTests {
 
 		}
 	}
-	
+
 	@Test
 	public void testFindByNomProduit()
 	{
@@ -65,13 +65,24 @@ class SiteApplicationTests {
 		}
 	}
 
-/*
+	@Test
+	public void testFindByNomProduitContains (){
+
+		List<Produit> prods=produitRepository.findByNomProduitContains("PC HP");
+		for (Produit p : prods){
+			System.out.println(p);
+
+		}   
+
+	}
+
+	/*
 	//Test de la suppression de produit 
 	@Test
 	public void testDeleteProduits(){
 		produitRepository.deleteById(4L);
 
 	}
-	*/
+	 */
 
 }
