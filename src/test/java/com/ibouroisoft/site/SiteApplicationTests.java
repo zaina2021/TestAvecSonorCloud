@@ -102,6 +102,19 @@ class SiteApplicationTests {
 		}
 
 	}
+	
+	@Test
+	public void testFindByCategorieIdCat() {
+		List<Produit> prods =  produitRepository.findByCategorieIdCat(4L);
+		for(Produit p : prods) {
+			System.out.println(p);
+			System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+
+
+		}
+
+	}
+
 
 	/*
 	//Test de la suppression de produit 
