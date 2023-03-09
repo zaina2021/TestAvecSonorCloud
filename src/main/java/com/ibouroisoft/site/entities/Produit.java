@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,6 +27,18 @@ public class Produit {
 	String nomProduit;
 	Double prixProduit ; 
 	Date dateCreation;
+	
+	@ManyToOne
+	Categorie categorie;
+	
+	//Constructeur avec paramètres
+		public Produit(Long idProduit, String nomProduit, Double prixProduit, Date dateCreation) {
+			super();
+			this.idProduit = idProduit;
+			this.nomProduit = nomProduit;
+			this.prixProduit = prixProduit;
+			this.dateCreation = dateCreation;
+		}
 
 
 
