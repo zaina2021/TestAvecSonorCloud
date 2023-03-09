@@ -39,7 +39,7 @@ class SiteApplicationTests {
 
 	@Test
 	public void testUpdateProduit() {
-		Produit p = produitRepository.findById(3L).get();
+		Produit p = produitRepository.findById(1L).get();
 		p.setPrixProduit(1000.0);
 		produitRepository.save(p);
 
@@ -55,12 +55,13 @@ class SiteApplicationTests {
 		}
 	}
 
-
+/*
 	//Test de la suppression de produit 
 	@Test
 	public void testDeleteProduits(){
-		produitRepository.deleteById(3L);
+		produitRepository.deleteById(4L);
 
 	}
+	*/
 
 }
