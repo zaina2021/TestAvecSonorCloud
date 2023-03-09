@@ -24,5 +24,7 @@ public interface ProduitRepository extends JpaRepository<Produit, Long> {
 	
 	List<Produit> findByCategorieIdCat(Long id);
 	
+	List<Produit> findByOrderByNomProduitAsc();
+	
 
 }
