@@ -51,7 +51,15 @@ public class ProduitRESTController {
 	return produitService.updateProduit(produit);
 	}
 	
+	/*
+	 * Créer le Web service REST permettant de supprimer un produit
+	 */
 	
+	@RequestMapping(value="/{id}",method = RequestMethod.DELETE)
+	public void deleteProduit(@PathVariable("id") Long id)
+	{
+	produitService.deleteProduitById(id);
+	}
 }
 
 
