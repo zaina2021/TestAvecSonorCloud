@@ -15,13 +15,14 @@ import com.ibouroisoft.site.services.ProduitService;
 @RequestMapping("/api")
 @CrossOrigin
 public class ProduitRESTController {
+	
 	@Autowired
 	ProduitService produitService;
-	
 	@RequestMapping(method = RequestMethod.GET)
-	public List<Produit> getAllProduits(){
+	//@RequestMapping(value = "/produits", method = RequestMethod.GET)
+	public List<Produit> getAllProduits() {
 		return produitService.getAllProduits();
-		
 	}
-
 }
+
+
