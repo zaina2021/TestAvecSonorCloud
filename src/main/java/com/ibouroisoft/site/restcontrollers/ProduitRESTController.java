@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,14 +16,24 @@ import com.ibouroisoft.site.services.ProduitService;
 @RequestMapping("/api")
 @CrossOrigin
 public class ProduitRESTController {
-	
+
 	@Autowired
 	ProduitService produitService;
+	
 	@RequestMapping(method = RequestMethod.GET)
-	//@RequestMapping(value = "/produits", method = RequestMethod.GET)
 	public List<Produit> getAllProduits() {
 		return produitService.getAllProduits();
 	}
+	/*
+	 * la méthode getProduitById qui 
+		retourne un produit en acceptant son id 
+	 */
+
+	@RequestMapping(value="/{id}",method = RequestMethod.GET)
+	public Produit getProduitById(@PathVariable("id") Long id) {
+		return produitService.getProduit(id);
+	}
+
 }
 
 
