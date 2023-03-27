@@ -24,7 +24,7 @@ class SiteApplicationTests {
 
 	@Test
 	void testCreateProduit() {
-		Produit prod = new Produit(0L,"PC ACER",1000.500,new Date());
+		Produit prod = new Produit(0L,"PC DELL",2000.500,new Date());
 		produitRepository.save(prod);
 	}
 

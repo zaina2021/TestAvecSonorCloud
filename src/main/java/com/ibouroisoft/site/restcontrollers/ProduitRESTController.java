@@ -20,7 +20,7 @@ public class ProduitRESTController {
 
 	@Autowired
 	ProduitService produitService;
-	
+
 	@RequestMapping(method = RequestMethod.GET)
 	public List<Produit> getAllProduits() {
 		return produitService.getAllProduits();
@@ -34,32 +34,42 @@ public class ProduitRESTController {
 	public Produit getProduitById(@PathVariable("id") Long id) {
 		return produitService.getProduit(id);
 	}
-	
+
 	/*
 	 * Créer le Web service REST permettant de créer un produit
 	 */
 	@RequestMapping(method = RequestMethod.POST)
 	public Produit createProduit(@RequestBody Produit produit) {
-	return produitService.saveProduit(produit);
+		return produitService.saveProduit(produit);
 	}
-	
+
 	/*
 	 * Créer le Web service REST permettant de modifier un produit
 	 */
 	@RequestMapping(method = RequestMethod.PUT)
 	public Produit updateProduit(@RequestBody Produit produit) {
-	return produitService.updateProduit(produit);
+		return produitService.updateProduit(produit);
 	}
-	
+
 	/*
 	 * Créer le Web service REST permettant de supprimer un produit
 	 */
-	
+
 	@RequestMapping(value="/{id}",method = RequestMethod.DELETE)
 	public void deleteProduit(@PathVariable("id") Long id)
 	{
-	produitService.deleteProduitById(id);
+		produitService.deleteProduitById(id);
 	}
+	 
+
+	/*
+	 * Créer le Web service REST permettant de retourner les produits ayant une 
+	   catégorie donnée
+	 */
+	@RequestMapping(value="/prodscat/{idCat}",method = RequestMethod.GET)
+	public List<Produit> getProduitsByCatId(@PathVariable("idCat") Long idCat) {
+		return produitService.findByCategorieIdCat(idCat);
+
+	}
+
 }
-
-
