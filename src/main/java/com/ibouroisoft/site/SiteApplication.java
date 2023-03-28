@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
+import com.ibouroisoft.site.entities.Categorie;
 import com.ibouroisoft.site.entities.Produit;
 
 @SpringBootApplication
@@ -22,7 +23,7 @@ public class SiteApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		repositoryRestConfiguration.exposeIdsFor(Produit.class);
+		repositoryRestConfiguration.exposeIdsFor(Produit.class, Categorie.class);
 		
 		
 	}
